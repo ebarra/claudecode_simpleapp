@@ -1,0 +1,13 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  gap: 20px;
+}
+
+.timer-container {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+}
