@@ -59,6 +59,10 @@ function App() {
     setDoubleSpeed(!doubleSpeed);
   };
   
+  const resetSpeed = () => {
+    setDoubleSpeed(false);
+  };
+  
   const addMinutes = (minutes) => {
     // Convert minutes to seconds and add to accumulated time
     const secondsToAdd = minutes * 60;
@@ -101,7 +105,12 @@ function App() {
         />
       </div>
       
-      <ButtonPanel onReset={resetTimer} onDoubleSpeed={toggleDoubleSpeed} onAddMinutes={addMinutes} />
+      <ButtonPanel 
+        onReset={resetTimer} 
+        onDoubleSpeed={toggleDoubleSpeed} 
+        onAddMinutes={addMinutes}
+        onResetSpeed={resetSpeed}
+      />
     </div>
   );
 }

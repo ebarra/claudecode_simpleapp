@@ -2,6 +2,8 @@ import React from 'react';
 import './TimeDisplay.css';
 
 function TimeDisplay({ accumulatedTime, isEarning, isSpending, doubleSpeed }) {
+  const childName = process.env.REACT_APP_CHILD_NAME || 'LUCAS';
+  
   // Format seconds into HH:MM:SS
   const formatTime = (seconds) => {
     const hours = Math.floor(seconds / 3600);
@@ -33,7 +35,7 @@ function TimeDisplay({ accumulatedTime, isEarning, isSpending, doubleSpeed }) {
 
   return (
     <div className={`time-display ${statusClass}`}>
-      <h2>Tiempo Acumulado</h2>
+      <h2>Tiempo Acumulado {childName}</h2>
       <div className="timer">{formatTime(accumulatedTime)}</div>
       <div className="status">{statusText}</div>
       {doubleSpeed && !isEarning && !isSpending && (

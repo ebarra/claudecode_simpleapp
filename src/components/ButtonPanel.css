@@ -12,7 +12,7 @@
   gap: 15px;
 }
 
-.reset-button, .double-speed-button, .add-minutes-button {
+.reset-button, .double-speed-button, .reset-speed-button, .add-minutes-button {
   padding: 10px 20px;
   color: white;
   border: none;
@@ -36,6 +36,14 @@
 
 .double-speed-button:hover {
   background-color: #1976d2;
+}
+
+.reset-speed-button {
+  background-color: #607d8b;
+}
+
+.reset-speed-button:hover {
+  background-color: #455a64;
 }
 
 .add-minutes-button {

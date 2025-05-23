@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ButtonPanel.css';
 
-function ButtonPanel({ onReset, onDoubleSpeed, onAddMinutes }) {
+function ButtonPanel({ onReset, onDoubleSpeed, onAddMinutes, onResetSpeed }) {
   const [showPasswordPrompt, setShowPasswordPrompt] = useState(false);
   const [showAddMinutesModal, setShowAddMinutesModal] = useState(false);
   const [password, setPassword] = useState('');
@@ -19,6 +19,11 @@ function ButtonPanel({ onReset, onDoubleSpeed, onAddMinutes }) {
     setActionType('doubleSpeed');
   };
 
+  const handleResetSpeedClick = () => {
+    setShowPasswordPrompt(true);
+    setActionType('resetSpeed');
+  };
+
   const handleAddMinutesClick = () => {
     setShowPasswordPrompt(true);
     setActionType('addMinutes');
@@ -30,6 +35,8 @@ function ButtonPanel({ onReset, onDoubleSpeed, onAddMinutes }) {
         onReset();
       } else if (actionType === 'doubleSpeed') {
         onDoubleSpeed();
+      } else if (actionType === 'resetSpeed') {
+        onResetSpeed();
       } else if (actionType === 'addMinutes') {
         setShowAddMinutesModal(true);
       }
@@ -64,6 +71,9 @@ function ButtonPanel({ onReset, onDoubleSpeed, onAddMinutes }) {
         </button>
         <button className="double-speed-button" onClick={handleDoubleSpeedClick}>
           Velocidad x2
+        </button>
+        <button className="reset-speed-button" onClick={handleResetSpeedClick}>
+          Velocidad x1
         </button>
         <button className="add-minutes-button" onClick={handleAddMinutesClick}>
           Añadir Minutos
